@@ -2,17 +2,27 @@ import { Post } from "@/types/collection";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import PostContent from "./post-content";
 
 interface PostProps {
   post: Post;
 }
 
 const PostCard = ({ post }: PostProps) => (
-  <Link className="grid grid-cols-2 gap-10" href={`/post/${post.slug}`}>
+  <Link
+    className="grid items-center grid-cols-2 gap-10"
+    href={`/post/${post.slug}`}
+  >
     {/* post image */}
-    <Image src={post.image} width={600} height={300} alt={post.title} />
+    <Image
+      className="rounded-md w-full object-cover object-center max-h-[300px]"
+      src={post.image}
+      width={600}
+      height={300}
+      alt={post.title}
+    />
     {/* post content */}
-    <div>{post.title}</div>
+    <PostContent post={post} />
   </Link>
 );
 
