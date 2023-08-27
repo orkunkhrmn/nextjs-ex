@@ -2,6 +2,7 @@ import React from "react";
 import PaddingContainer from "../layout/padding-container";
 import siteConfig from "@/config/site";
 import Link from "next/link";
+import SocialLink from "../elements/social-link";
 
 const Footer = () => {
   return (
@@ -17,7 +18,28 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between mt-6 gap-4">
           <div>
             <div className="text-lg font-medium">#blogging</div>
-            <div>Social Links</div>
+            <div className="flex items-center gap-3 text-neutral-600 mt-2">
+              <SocialLink
+                platform="twitter"
+                link={siteConfig.socialLinks.twitter}
+              />
+              <SocialLink
+                platform="github"
+                link={siteConfig.socialLinks.github}
+              />
+              <SocialLink
+                platform="instagram"
+                link={siteConfig.socialLinks.instagram}
+              />
+              <SocialLink
+                platform="linkedin"
+                link={siteConfig.socialLinks.linkedin}
+              />
+              <SocialLink
+                platform="youtube"
+                link={siteConfig.socialLinks.youtube}
+              />
+            </div>
           </div>
           <div>
             <div className="text-sm text-neutral-400">Currently At</div>
